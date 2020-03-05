@@ -23,6 +23,7 @@ The Shipyard:
 Fishing barge
 - Has max speed
 - Has cargo size
+- Has crew
 - Can go fishing
 
 ## Task
@@ -31,6 +32,6 @@ The day is here, the new modern era is upon us. By progressing to the new age, w
 - Make it possible for player to call `upgrade()` on the GameInterface
 - Before the upgrade, Shipyard will produce `FishingBarge`
 - The upgrade will make Shipyards to produce new type of ship, `SturdyFishingShip`
-- After the upgrade it won't be possible to create new fishing barges anymore
+- After the upgrade it won't be possible to create new fishing barges anymore (in any Shipyard)
 - The `SturdyFishingShip` will have larger cargo and speed
-- The `SturdyFishingShip` costs more than old fishing barge.
+- All the `SturdyFishingShip` crew members have to be over 18

@@ -4,14 +4,16 @@ public class Shipyard {
     private int wood = 100;
     private int metal = 100;
     private int cloth = 100;
+    private int crewManAvailable = 10;
 
     private final FishingShipBlueprints blueprints = new FishingShipBlueprints();
 
     FishingBarge constructShip() {
         MaterialRequirements requirements = blueprints.materialNeeded();
-        Material material = prepareMaterial(requirements);
+        updateMaterials(requirements);
 
-        FishingBarge ship = blueprints.fishingShip(material);
+        Crew crew = createCrewForBlueprint();
+        FishingBarge ship = blueprints.fishingShip(crew);
         return ship;
     }
 
@@ -19,9 +21,12 @@ public class Shipyard {
         return String.format("We can create [%s]", blueprints.shipType());
     }
 
-    private Material prepareMaterial(MaterialRequirements requirements) {
-        //fixme: check and update material
-        return new Material(5,1,3);
+    private void updateMaterials(MaterialRequirements requirements) {
+        // Not implemented yet
     }
 
+    private Crew createCrewForBlueprint() {
+        blueprints.crewNeeded();
+        return new Crew(new CrewMember("Juana", 25), new CrewMember("Pablo", 24));
+    }
 }
